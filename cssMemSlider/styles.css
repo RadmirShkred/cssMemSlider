@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #25282A;
+}
+
+input {
+    display: none;
+}
+
+.slider {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 2rem 2rem 5rem;
+    overflow: hidden;
+    background-color: #1a3056;
+}
+
+.pic1 {
+    background: no-repeat url("./images/mem1.jpg");
+}
+
+.pic2 {
+    background: no-repeat url("./images/mem2.jpg");
+}
+
+.pic3 {
+    background: no-repeat url("./images/mem3.jpg");
+}
+
+.pic4 {
+    background: no-repeat url("./images/mem4.jpg");
+}
+
+.pic1, .pic2, .pic3, .pic4 {
+    width: 0;
+    height: auto;
+    background-size: contain;
+    background-color: #66a4e2;
+    background-position: center;
+    transition: all 1s ease-in-out;
+}
+
+.phrase1, .phrase2, .phrase3, .phrase4 {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    overflow: hidden;
+    font-size: 2em;
+    color: #d9dce0;
+    align-self: flex-end;
+    transition: opacity 1.5s ease;
+}
+
+#button1:checked ~ .pic1,
+#button2:checked ~ .pic2,
+#button3:checked ~ .pic3,
+#button4:checked ~ .pic4 {
+    width: 100%;
+    height: 98%;
+}
+
+#button1:checked ~ .buttons .num1,
+#button2:checked ~ .buttons .num2,
+#button3:checked ~ .buttons .num3,
+#button4:checked ~ .buttons .num4 {
+    background: #04335d;
+}
+
+#button1:hover ~ .buttons .num1,
+#button2:hover ~ .buttons .num2,
+#button3:hover ~ .buttons .num3,
+#button4:hover ~ .buttons .num4 {
+    background: #337cbe;
+}
+
+#button1:active ~ .buttons .num1,
+#button2:active ~ .buttons .num2,
+#button3:active ~ .buttons .num3,
+#button4:active ~ .buttons .num4 {
+    background: #104d85;
+}
+
+#button1:checked ~ .phrase1,
+#button2:checked ~ .phrase2,
+#button3:checked ~ .phrase3,
+#button4:checked ~ .phrase4 {
+    width: auto;
+    height: 2rem;
+    opacity: 1;
+}
+
+.button {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background-color: #2fffff;
+    border-radius: 50%;
+    border: 2px solid #04052d;
+}
+
+.label {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    height: 3rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 1920px) {
+    .slider {
+        width: 70%;
+    }
+
+    .phrase1, .phrase2, .phrase3, .phrase4 {
+        font-size: 1.8em;
+    }
+
+    #button1:checked ~ .phrase1,
+    #button2:checked ~ .phrase2,
+    #button3:checked ~ .phrase3,
+    #button4:checked ~ .phrase4 {
+        height: 1.8rem;
+    }
+
+    .buttons, .label {
+        height: 2rem;
+    }
+
+    .button {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+}
+
+@media (max-width: 1200px) {
+    .slider {
+        width: 75%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        padding: 1.5rem 1.5rem 3rem;
+    }
+
+    .phrase1, .phrase2, .phrase3, .phrase4 {
+        order: 1;
+        align-self: auto;
+        font-size: 1.4em;
+    }
+
+    #button1:checked ~ .phrase1,
+    #button2:checked ~ .phrase2,
+    #button3:checked ~ .phrase3,
+    #button4:checked ~ .phrase4 {
+        height: 1.6rem;
+    }
+
+    .buttons {
+        margin-top: 1.2rem;
+        margin-bottom: 1.2rem;
+        height: 1.5rem;
+        align-self: auto;
+    }
+
+    .button {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    .label {
+        height: 1.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .slider {
+        width: 100%;
+    }
+}
