@@ -19,7 +19,7 @@ input {
     width: 80%;
     height: 100vh;
     margin: 0 auto;
-    padding: 2rem 2rem 3rem;
+    padding: 2rem 2rem 5rem;
     overflow: hidden;
     background-color: #1a3056;
 }
@@ -189,5 +189,11 @@ input {
 
     .label {
         height: 1.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .slider {
+        width: 100%;
     }
 }
